@@ -1,0 +1,11 @@
+version: '3'
+services:
+  jenkins:
+    build: .
+    image: tail/jenkins:1.651.3
+    ports:
+      - 8081:8080
+    volumes:
+          - ~/jenkins_home:/var/jenkins_home:rw
+          - ~/.m2/repository:/m2/repository
+          - /var/run/docker.sock:/var/run/docker.sock
